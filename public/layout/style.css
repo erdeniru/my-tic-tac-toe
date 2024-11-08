@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.game {
+    /* border: 1px solid red; */
+
+    /* height: 100vh; */
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.game__title {
+    /* border: 1px solid blue; */
+    display: block;
+
+    text-align: center;
+}
+
+.game__content {
+    /* border: 1px solid green; */
+
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tic-tac-toe {
+    /* border: 1px solid orange; */
+
+    margin: 20px;
+
+    min-width: 320px;
+    max-width: 640px;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    font-family: 'Geologica', sans-serif;
+    font-size: 25px;
+}
+
+.information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.information__message {
+    color: gray;
+}
+
+.information__congratulation {
+    color: green;
+}
+
+.information__draw {
+    color: blue;
+}
+
+.bg__player {
+    background-size: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.bg__player_x {
+    width: 3em;
+    aspect-ratio: 1/1;
+    background-image: url('/layout/x.svg');
+}
+
+.bg__player_o {
+    width: 3em;
+    aspect-ratio: 1/1;
+    background-image: url('/layout/o.svg');
+}
+
+.board {
+    /* border: 1px solid brown; */
+
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    /* background: #ccc; */
+    background: yellowgreen;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.board_disabled {
+    pointer-events: none;
+    opacity: 0.75;
+}
+
+.cell {
+    /* border: 1px solid black; */
+
+    flex: 1;
+
+    flex-basis: 30%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 48px;
+    font-weight: normal;
+}
+
+.cell_noHover {
+    pointer-events: none;
+}
+
+.bg__cell {
+    color: #fff;
+    background: hsla(0, 0%, 36%, 1);
+    background-size: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.bg__cell:hover {
+    background: hsla(0, 0%, 46%, 1);
+    cursor: pointer;
+}
+
+.bg__cell_win {
+    background-color: hsla(0, 0%, 20%, 1);
+    background-size: 60%;
+    font-weight: bold;
+}
+
+.bg__cell_o {
+    background-image: url('/layout/o.svg');
+}
+
+.bg__cell_x {
+    background-image: url('/layout/x.svg');
+}
+
+.control {
+}
+
+.btn {
+    border: none;
+    border-radius: 2px;
+    padding: 10px;
+
+    background: hsla(0, 0%, 36%, 1);
+    color: #ececec;
+    font-size: 25px;
+}
+
+.btn:hover {
+    background: hsla(0, 0%, 46%, 1);
+    cursor: pointer;
+}

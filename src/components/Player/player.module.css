@@ -1,0 +1,22 @@
+.bg {
+    background-size: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.bg_x {
+    width: 3em;
+    aspect-ratio: 1/1;
+    background-image: url('../../../public/layout/x.svg');
+}
+
+.bg_o {
+    width: 3em;
+    aspect-ratio: 1/1;
+    background-image: url('../../../public/layout/o.svg');
+}
+
+.bg_null {
+    width: 3em;
+    aspect-ratio: 1/1;
+}

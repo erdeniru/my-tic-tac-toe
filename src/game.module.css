@@ -1,0 +1,59 @@
+.game {
+    /* border: 1px solid red; */
+
+    /* height: 100vh; */
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.game__title {
+    /* border: 1px solid blue; */
+    display: block;
+
+    text-align: center;
+}
+
+.game__content {
+    /* border: 1px solid green; */
+
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tic-tac-toe {
+    /* border: 1px solid orange; */
+
+    margin: 20px;
+
+    min-width: 320px;
+    max-width: 640px;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    font-family: 'Geologica', sans-serif;
+    font-size: 25px;
+}
+
+.btn {
+    border: none;
+    border-radius: 2px;
+    padding: 10px;
+
+    background: hsla(0, 0%, 36%, 1);
+    color: #ececec;
+    font-size: 25px;
+}
+
+.btn:hover {
+    background: hsla(0, 0%, 46%, 1);
+    cursor: pointer;
+}

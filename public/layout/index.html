@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tic Tac Toe</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main class="game">
+            <h1 class="game__title">Крестики-Нолики</h1>
+            <div class="game__content">
+                <div class="tic-tac-toe">
+                    <div class="information">
+                        <div class="information__message">Текущий ход</div>
+                        <div class="information__congratulation">Ура! Победитель</div>
+                        <div class="bg__player bg__player_x"></div>
+                        <div class="bg__player bg__player_o"></div>
+                        <div class="information__draw">Ничья!</div>
+                    </div>
+                    <div class="board board_disabled">
+                        <div
+                            class="cell bg__cell bg__cell_o bg__cell_win cell_noHover"
+                        ></div>
+                        <div
+                            class="cell bg__cell bg__cell_o bg__cell_win cell_noHover"
+                        ></div>
+                        <div
+                            class="cell bg__cell bg__cell_o bg__cell_win cell_noHover"
+                        ></div>
+                        <div class="cell bg__cell"></div>
+                        <div class="cell bg__cell bg__cell_x cell_noHover"></div>
+                        <div class="cell bg__cell"></div>
+                        <div class="cell bg__cell bg__cell_o cell_noHover"></div>
+                        <div class="cell bg__cell"></div>
+                        <div class="cell bg__cell bg__cell_x cell_noHover"></div>
+                    </div>
+                    <div class="control">
+                        <button class="btn restart">Начать заново</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

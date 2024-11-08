@@ -1,0 +1,68 @@
+.content {
+    /* border: 1px solid brown; */
+
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    /* background: #ccc; */
+    background: yellowgreen;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.content_disabled {
+    pointer-events: none;
+    opacity: 0.75;
+}
+
+.cell {
+    /* border: 1px solid black; */
+
+    flex: 1;
+
+    flex-basis: 30%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 48px;
+    font-weight: normal;
+}
+
+.cell_noHover {
+    pointer-events: none;
+}
+
+.bg__cell {
+    color: #fff;
+    background: hsla(0, 0%, 36%, 1);
+    background-size: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/*
+.bg__cell:hover {
+    background: hsla(0, 0%, 46%, 1);
+    cursor: pointer;
+}
+*/
+
+.bg__cell_win {
+    opacity: 1;
+    /* background-color: hsla(0, 0%, 20%, 1); */
+    background-color: #000;
+    background-size: 60%;
+    font-weight: bold;
+}
+
+.bg__cell_o {
+    background-image: url('../../../public/layout/o.svg');
+}
+
+.bg__cell_x {
+    background-image: url('../../../public/layout/x.svg');
+}
