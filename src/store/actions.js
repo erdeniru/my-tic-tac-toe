@@ -1,4 +1,2 @@
-export const SET_CURRENT_PLAYER = 'SET_CURRENT_PLAYER';
-export const SET_STATUS_GAME = 'SET_STATUS_GAME';
 export const SET_BOARD_CELL = 'SET_BOARD_CELL';
 export const RESTART_GAME = 'RESTART_GAME';

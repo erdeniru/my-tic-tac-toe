@@ -1,18 +1,11 @@
-import { useState } from 'react';
-import { STATUS, WIN_PATERN_INITIAL } from '../../constants';
-import { handlerBoardCell } from '../../handlers';
+import { useEffect, useState } from 'react';
 import { BoardLayout } from './board-layout';
+import { store } from '../../store/store';
 
-export const Board = (state) => {
-    const { status } = state;
+export const Board = () => {
+    const [, setState] = useState(store.getState());
 
-    const [winPatern, setWinPatern] = useState(WIN_PATERN_INITIAL);
+    useEffect(() => store.subscribe(() => setState(store.getState())), []);
 
-    const boardState = { ...state, winPatern, setWinPatern, handler: handlerBoardCell };
-
-    if (winPatern !== WIN_PATERN_INITIAL && status !== STATUS.WIN) {
-        setWinPatern(WIN_PATERN_INITIAL);
-    }
-
-    return <BoardLayout {...boardState} />;
+    return <BoardLayout />;
 };

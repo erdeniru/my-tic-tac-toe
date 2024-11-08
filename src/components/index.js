@@ -1,3 +1,3 @@
 export * from './Board/board';
-export * from './Information/information-layout';
+export * from './Information/information';
 export * from './Control/control';

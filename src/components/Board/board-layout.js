@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types';
+import { store } from '../../store/store';
 import { STATUS, PLAYER } from '../../constants';
+import { handlerBoardCell } from '../../handlers';
 import styles from './board.module.css';
 
-export const BoardLayout = (state) => {
-    const { status, board, winPatern, handler } = state;
+export const BoardLayout = () => {
+    const { status, board, winPattern } = store.getState();
 
     const isGameOver = status === STATUS.WIN || status === STATUS.DRAW;
 
@@ -21,21 +22,15 @@ export const BoardLayout = (state) => {
                         styles.cell + ' ' + styles.bg__cell +
                         (value === PLAYER.NOUGHT ? ' ' + styles.bg__cell_o : '') +
                         (value === PLAYER.CROSS ? ' ' + styles.bg__cell_x : '') +
-                        (winPatern.indexOf(index) > -1 ? ' ' + styles.bg__cell_win : '') +
+                        (winPattern.indexOf(index) > -1 ? ' ' + styles.bg__cell_win : '') +
                         (value !== PLAYER.NONE ? ' ' + styles.cell_noHover : '') +
                         ''
                     }
                     {...(value === PLAYER.NONE
-                        ? { onClick: () => handler(state, index) }
+                        ? { onClick: () => handlerBoardCell(index) }
                         : {})}
                 ></div>
             ))}
         </div>
     );
-};
-
-BoardLayout.propTypes = {
-    status: PropTypes.oneOf([STATUS.TURN, STATUS.WIN, STATUS.DRAW]),
-    board: PropTypes.arrayOf(PropTypes.oneOf([PLAYER.CROSS, PLAYER.NOUGHT, PLAYER.NONE])),
-    winPatern: PropTypes.arrayOf(PropTypes.number),
 };

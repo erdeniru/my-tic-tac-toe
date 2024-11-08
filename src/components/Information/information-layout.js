@@ -1,10 +1,12 @@
-import PropTypes from 'prop-types';
-import { PlayerLayout } from '../Player/player-layout';
-import { STATUS, PLAYER } from '../../constants';
+import { store } from '../../store/store';
+import { STATUS } from '../../constants';
 import { MESSAGE_TURN, MESSAGE_CONGRATULATION, MESSAGE_DRAW } from '../../constants';
+import { PlayerLayout } from '../Player/player-layout';
 import styles from './information.module.css';
 
-export const InformationLayout = ({ status, player }) => {
+export const InformationLayout = () => {
+    const { currentPlayer, status } = store.getState();
+
     let message = '';
     let classInformation = '';
 
@@ -22,12 +24,7 @@ export const InformationLayout = ({ status, player }) => {
     return (
         <div className={styles.content}>
             <div className={classInformation}>{message}</div>
-            <PlayerLayout player={player} />
+            <PlayerLayout player={currentPlayer} />
         </div>
     );
-};
-
-InformationLayout.propTypes = {
-    status: PropTypes.oneOf([STATUS.TURN, STATUS.WIN, STATUS.DRAW]),
-    player: PropTypes.oneOf([PLAYER.CROSS, PLAYER.NOUGHT, PLAYER.NONE]),
 };

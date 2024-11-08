@@ -1,8 +1,6 @@
-import { createEmptyBoard } from '../utils';
-import { PLAYER, STATUS } from '../constants';
+import { store } from '../store/store';
+import { RESTART_GAME } from '../store/actions';
 
-export const handlerReset = ({ setPlayer, setStatus, setBoard, setWinPatern }) => {
-    setPlayer(PLAYER.CROSS);
-    setStatus(STATUS.TURN);
-    setBoard(createEmptyBoard());
+export const handlerReset = () => {
+    store.dispatch({ type: RESTART_GAME });
 };
