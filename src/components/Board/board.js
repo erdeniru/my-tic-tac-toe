@@ -5,7 +5,12 @@ import { store } from '../../store/store';
 export const Board = () => {
     const [, setState] = useState(store.getState());
 
-    useEffect(() => store.subscribe(() => setState(store.getState())), []);
+    useEffect(() => {
+        const unsubscribe = store.subscribe(() => setState(store.getState()));
+        return () => {
+            unsubscribe();
+        };
+    }, []);
 
     return <BoardLayout />;
 };
