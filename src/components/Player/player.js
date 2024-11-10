@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { PLAYER } from '../../constants';
 import styles from './player.module.css';
 
-export const PlayerLayout = ({ player = PLAYER.NONE }) => {
+export const Player = ({ player = PLAYER.NONE }) => {
     let classPlayer = '';
 
     // prettier-ignore
@@ -15,6 +15,6 @@ export const PlayerLayout = ({ player = PLAYER.NONE }) => {
     return <div className={styles.bg + classPlayer}></div>;
 };
 
-PlayerLayout.propTypes = {
+Player.propTypes = {
     player: PropTypes.oneOf([PLAYER.CROSS, PLAYER.NOUGHT, PLAYER.NONE]),
 };
