@@ -1,9 +1,8 @@
+import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Player } from '../../components';
 import { STATUS } from '../../constants';
 import { MESSAGE_TURN, MESSAGE_CONGRATULATION, MESSAGE_DRAW } from '../../constants';
-import styles from './information.module.css';
-import { Component } from 'react';
 
 class InformationContainer extends Component {
     constructor(props) {
@@ -19,17 +18,17 @@ class InformationContainer extends Component {
         if (status === STATUS.TURN) {
             this.setState({
                 message: MESSAGE_TURN,
-                classInformation: styles.content__message,
+                classInformation: 'text-gray-500',
             });
         } else if (status === STATUS.WIN) {
             this.setState({
                 message: MESSAGE_CONGRATULATION,
-                classInformation: styles.content__congratulation,
+                classInformation: 'text-green-600',
             });
         } else if (status === STATUS.DRAW) {
             this.setState({
                 message: MESSAGE_DRAW,
-                classInformation: styles.content__draw,
+                classInformation: 'text-blue-700',
             });
         }
     };
@@ -46,7 +45,7 @@ class InformationContainer extends Component {
 
     render() {
         return (
-            <div className={styles.content}>
+            <div className="flex flex-nowrap justify-center items-center h-[75px]">
                 <div className={this.state.classInformation}>{this.state.message}</div>
                 <Player player={this.props.currentPlayer} />
             </div>

@@ -1,17 +1,18 @@
-import PropTypes from 'prop-types';
-import styles from './game.module.css';
+import { Component } from 'react';
 
-export const GameLayout = ({ title, children }) => {
-    return (
-        <main className={styles.game}>
-            <h1 className={styles.game__title}>{title}</h1>
-            <div className={styles.game__content}>
-                <div className={styles['tic-tac-toe']}>{children}</div>
-            </div>
-        </main>
-    );
-};
-
-GameLayout.propTypes = {
-    title: PropTypes.string,
-};
+export class GameLayout extends Component {
+    render() {
+        return (
+            <main className="flex flex-col flex-nowrap">
+                <h1 className="block text-center text-4xl font-bold text-gray-700">
+                    {this.props.title}
+                </h1>
+                <div className="flex-1 flex justify-center items-center">
+                    <div className="m-[20px] min-w-[320px] max-w-[640px] flex-1 flex flex-col items-center gap-[20px] font-['Geologica', sans-serif] text-2xl">
+                        {this.props.children}
+                    </div>
+                </div>
+            </main>
+        );
+    }
+}

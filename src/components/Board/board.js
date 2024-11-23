@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { setBoardCellAction } from '../../store/action-creators';
 import { STATUS, PLAYER } from '../../constants';
-import styles from './board.module.css';
 import { Component } from 'react';
 
 class BoardContainer extends Component {
@@ -33,8 +32,8 @@ class BoardContainer extends Component {
         return (
             <div
                 className={
-                    styles.content +
-                    (this.state.isGameOver ? ' ' + styles.content_disabled : '') +
+                    'w-[100%] aspect-w-1 aspect-square bg-lime-400 flex flex-wrap gap-[5px]' +
+                    (this.state.isGameOver ? ' pointer-events-none opacity-75' : '') +
                     ''
                 }
             >
@@ -43,11 +42,11 @@ class BoardContainer extends Component {
                         key={index}
                         className={
                             // prettier-ignore
-                            styles.cell + ' ' + styles.bg__cell +
-                            (value === PLAYER.NOUGHT ? ' ' + styles.bg__cell_o : '') +
-                            (value === PLAYER.CROSS ? ' ' + styles.bg__cell_x : '') +
-                            (this.props.winPattern.indexOf(index) > -1 ? ' ' + styles.bg__cell_win : '') +
-                            (value !== PLAYER.NONE ? ' ' + styles.cell_noHover : '') +
+                            "board_cell board_bg_cell" +
+                            (value === PLAYER.NOUGHT ? ' board_bg_cell__o' : '') +
+                            (value === PLAYER.CROSS ? ' board_bg_cell__x' : '') +
+                            (this.props.winPattern.indexOf(index) > -1 ? ' board_bg_cell__win' : '') +
+                            (value !== PLAYER.NONE ? ' board_bg_cell__noHover' : '') +
                             ''
                         }
                         {...(value === PLAYER.NONE

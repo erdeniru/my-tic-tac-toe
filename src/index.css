@@ -1,6 +1,86 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer components {
+    .btn {
+        border: none;
+        border-radius: 2px;
+        padding: 10px;
+
+        background: hsla(0, 0%, 36%, 1);
+        color: #ececec;
+        font-size: 25px;
+    }
+
+    .btn:hover {
+        background: hsla(0, 0%, 46%, 1);
+        cursor: pointer;
+    }
+
+    .board_cell {
+        flex: 1;
+
+        flex-basis: 30%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 48px;
+        font-weight: normal;
+    }
+
+    .board_bg_cell {
+        color: #fff;
+        background: hsla(0, 0%, 36%, 1);
+        background-size: 50%;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .boardbg__cell__noHover {
+        pointer-events: none;
+    }
+
+    .board_bg_cell__o {
+        background-image: url('../public/layout/o.svg');
+    }
+
+    .board_bg_cell__x {
+        background-image: url('../public/layout/x.svg');
+    }
+
+    .board_bg_cell__win {
+        opacity: 1;
+        background-color: #000;
+        background-size: 60%;
+        font-weight: bold;
+    }
+
+    .player_bg {
+        background-size: 50%;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .player_bg__x {
+        width: 3em;
+        aspect-ratio: 1/1;
+        background-image: url('../public/layout/x.svg');
+    }
+
+    .player_bg__o {
+        width: 3em;
+        aspect-ratio: 1/1;
+        background-image: url('../public/layout/o.svg');
+    }
+}
+
 * {
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
     padding: 0;

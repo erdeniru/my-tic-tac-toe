@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import { PLAYER } from '../../constants';
-import styles from './player.module.css';
 
 export class Player extends Component {
     constructor(props) {
@@ -15,8 +14,8 @@ export class Player extends Component {
         let className;
         // prettier-ignore
         switch (player) {
-            case PLAYER.CROSS: className = ' ' + styles.bg_x; break;
-            case PLAYER.NOUGHT: className = ' ' + styles.bg_o; break;
+            case PLAYER.CROSS: className = ' player_bg__x'; break;
+            case PLAYER.NOUGHT: className = ' player_bg__o'; break;
             default: className = '';
         }
 
@@ -34,6 +33,6 @@ export class Player extends Component {
     }
 
     render() {
-        return <div className={styles.bg + this.state.classPlayer}></div>;
+        return <div className={'player_bg' + this.state.classPlayer}></div>;
     }
 }
