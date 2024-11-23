@@ -16,7 +16,6 @@ class InformationContainer extends Component {
     }
 
     updatedStatus = (status) => {
-        console.log(status);
         if (status === STATUS.TURN) {
             this.setState({
                 message: MESSAGE_TURN,
