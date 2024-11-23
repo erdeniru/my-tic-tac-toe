@@ -1,20 +1,39 @@
-import PropTypes from 'prop-types';
+import { Component } from 'react';
 import { PLAYER } from '../../constants';
 import styles from './player.module.css';
 
-export const Player = ({ player = PLAYER.NONE }) => {
-    let classPlayer = '';
+export class Player extends Component {
+    constructor(props) {
+        super(props);
 
-    // prettier-ignore
-    switch (player) {
-        case PLAYER.CROSS: classPlayer = ' ' + styles.bg_x; break;
-        case PLAYER.NOUGHT: classPlayer = ' ' + styles.bg_o; break;
-        default:
+        this.state = {
+            classPlayer: '',
+        };
     }
 
-    return <div className={styles.bg + classPlayer}></div>;
-};
+    getClassNamePlayer = (player) => {
+        let className;
+        // prettier-ignore
+        switch (player) {
+            case PLAYER.CROSS: className = ' ' + styles.bg_x; break;
+            case PLAYER.NOUGHT: className = ' ' + styles.bg_o; break;
+            default: className = '';
+        }
 
-Player.propTypes = {
-    player: PropTypes.oneOf([PLAYER.CROSS, PLAYER.NOUGHT, PLAYER.NONE]),
-};
+        return className;
+    };
+
+    componentDidMount() {
+        this.setState({ classPlayer: this.getClassNamePlayer(this.props.player) });
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.player === prevProps.player) return;
+
+        this.setState({ classPlayer: this.getClassNamePlayer(this.props.player) });
+    }
+
+    render() {
+        return <div className={styles.bg + this.state.classPlayer}></div>;
+    }
+}
