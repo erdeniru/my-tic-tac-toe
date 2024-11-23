@@ -1,19 +1,25 @@
-import { useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import { restartGameAction } from './../../store/action-creators';
 import { CAPTION_RESTART } from '../../constants';
 import stylesGame from '../../game.module.css';
 import styles from './control.module.css';
+import { Component } from 'react';
 
-export const Control = () => {
-    const dispatch = useDispatch();
+class ControlContainer extends Component {
+    render() {
+        return (
+            <button
+                className={`${stylesGame.btn} ${styles.restart}`}
+                onClick={this.props.onReset}
+            >
+                {CAPTION_RESTART}
+            </button>
+        );
+    }
+}
 
-    const onReset = () => {
-        dispatch(restartGameAction());
-    };
+const mapDispatchToProps = (dispatch) => ({
+    onReset: () => dispatch(restartGameAction()),
+});
 
-    return (
-        <button className={`${stylesGame.btn} ${styles.restart}`} onClick={onReset}>
-            {CAPTION_RESTART}
-        </button>
-    );
-};
+export const Control = connect(null, mapDispatchToProps)(ControlContainer);
